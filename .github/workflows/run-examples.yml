@@ -1,0 +1,29 @@
+name: Run Examples
+
+# Runs on demand only until groupdocs-search-net==26.10.0 is on PyPI.
+on:
+  workflow_dispatch:
+
+jobs:
+  run-examples:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.13']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install .NET runtime system deps (ICU + GDI+)
+        run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends libicu-dev libgdiplus
+
+      - name: Install package
+        run: pip install -r Examples/requirements.txt
+
+      - name: Run all examples
+        run: python Examples/run_all_examples.py

@@ -1,0 +1,56 @@
+# GroupDocs.Search for Python via .NET - examples
+
+> On-premise SDK examples. Full-text search over Word, Excel, PowerPoint, PDF, OpenDocument, email, eBooks, web pages, archives and plain text, with reverse image search.
+
+Python SDK that builds a persistent index over a folder of documents and searches it with keyword, phrase, wildcard, regular-expression, fuzzy, boolean, faceted, date-range and numeric-range queries, with synonyms, homophones, word forms and spelling correction, then highlights what was found.
+
+## Key Features
+
+- Index folders, files, streams and extracted data; reopen the index later, update only what changed, optimize, merge and delete
+- One query language: phrases, wildcards, regular expressions, boolean operators, field (faceted) queries, date and numeric ranges, or queries built as objects
+- Fuzzy, synonym, homophone and word-form search with editable dictionaries, stop words and aliases
+- Highlighting of whole documents or fragments to HTML or plain text
+- Events while indexing (progress, errors, passwords, skipping or tagging documents) and plain Python objects as custom text extractors, word splitters, loggers and OCR connectors
+- Reverse image search over separate, embedded and archived images
+- Python 3.5 to 3.14; Windows, Linux and macOS, in Docker; no Office or Acrobat needed
+
+## Install
+
+Until `groupdocs-search-net` 26.10.0 is on PyPI, download the wheel for your platform from https://releases.groupdocs.com/search/python-net/ and install the file:
+
+```bash
+pip install ./groupdocs_search_net-26.10.0-py3-none-win_amd64.whl
+```
+
+Once it is on PyPI:
+
+```bash
+pip install groupdocs-search-net
+```
+
+## Code Snippet
+
+```python
+from groupdocs.search import Index
+
+index = Index("./index")            # creates the index folder, or opens an existing index
+index.add("./documents")            # indexes every supported file in the folder
+result = index.search("contract")
+print("Found in %d documents (%d occurrences)" % (result.document_count, result.occurrence_count))
+```
+
+## AI Search Tags
+
+`python full text search`, `search documents python`, `python document indexing`, `search pdf and word files python`, `fuzzy search python`, `python search engine library`, `highlight search results python`, `faceted search python`, `reverse image search python`, `rag document retrieval python`, `groupdocs search sdk`, `on-premise enterprise search python`
+
+## Docs & Links
+
+- Docs: https://docs.groupdocs.com/search/python-net/
+- Formats: https://docs.groupdocs.com/search/python-net/supported-document-formats/
+- PyPI: https://pypi.org/project/groupdocs-search-net/
+- API reference: https://reference.groupdocs.com/search/python-net/
+- Releases: https://releases.groupdocs.com/search/python-net/
+- Agent guide: AGENTS.md (also shipped in the wheel as groupdocs/search/AGENTS.md)
+- Full docs as text: https://docs.groupdocs.com/search/python-net/llms-full.txt
+- Code: https://github.com/groupdocs-search/GroupDocs.Search-for-Python-via-.NET
+- MCP (link only): docs server https://docs.groupdocs.com/mcp; search server https://docs.groupdocs.com/search/mcp/
