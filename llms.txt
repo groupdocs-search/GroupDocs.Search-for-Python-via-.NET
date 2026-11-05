@@ -16,16 +16,14 @@ Python SDK that builds a persistent index over a folder of documents and searche
 
 ## Install
 
-Until `groupdocs-search-net` 26.10.0 is on PyPI, download the wheel for your platform from https://releases.groupdocs.com/search/python-net/ and install the file:
+```bash
+pip install groupdocs-search-net
+```
+
+Without access to PyPI, download the wheel for your platform from https://releases.groupdocs.com/search/python-net/ and install the file:
 
 ```bash
 pip install ./groupdocs_search_net-26.10.0-py3-none-win_amd64.whl
-```
-
-Once it is on PyPI:
-
-```bash
-pip install groupdocs-search-net
 ```
 
 ## Code Snippet

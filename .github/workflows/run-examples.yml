@@ -1,7 +1,10 @@
 name: Run Examples
 
-# Runs on demand only until groupdocs-search-net==26.10.0 is on PyPI.
 on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
   workflow_dispatch:
 
 jobs:

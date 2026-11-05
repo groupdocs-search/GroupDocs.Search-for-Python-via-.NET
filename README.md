@@ -36,13 +36,17 @@ GroupDocs.Search for Python via .NET supports a wide range of file formats, incl
    cd ./GroupDocs.Search-for-Python-via-.NET/Examples
    ```
 
-4. **Install Package**: `groupdocs-search-net` 26.10.0 is not on PyPI yet. Download the platform-specific `.whl` file from the [GroupDocs Releases](https://releases.groupdocs.com/search/python-net/) website and install it (adjust the filename to your platform — `win_amd64`, `manylinux*_x86_64`, `macosx_*_arm64`, `macosx_*_x86_64`):
+4. **Install Package**: install dependencies with pip:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+   Alternatively, download the platform-specific `.whl` file from the [GroupDocs Releases](https://releases.groupdocs.com/search/python-net/) website and install it directly (adjust the filename to your platform — `win_amd64`, `manylinux*_x86_64`, `macosx_*_arm64`, `macosx_*_x86_64`):
 
    ```bash
    pip install ./groupdocs_search_net-26.10.0-py3-none-win_amd64.whl
    ```
-
-   Once the version is on PyPI, install the dependencies with pip instead: `pip install -r requirements.txt`.
 
 5. **Configure License (Optional)**: `run_all_examples.py` applies a license automatically when the `GROUPDOCS_LIC_PATH` environment variable holds the absolute path of your `.lic` file.
 
@@ -58,7 +62,7 @@ GroupDocs.Search for Python via .NET supports a wide range of file formats, incl
 
 ## Run with Docker
 
-The repository ships a `Dockerfile` that builds a Linux image with Python 3.13, the system packages the examples need (`libicu-dev`, `libgdiplus`), and the `groupdocs-search-net` package preinstalled. The image installs the package from PyPI, so it builds once `groupdocs-search-net` 26.10.0 is published there.
+The repository ships a `Dockerfile` that builds a Linux image with Python 3.13, the system packages the examples need (`libicu-dev`, `libgdiplus`), and the `groupdocs-search-net` package preinstalled.
 
 ```bash
 # Build the image
@@ -84,7 +88,7 @@ For on-demand documentation lookups, combine the bundled `AGENTS.md` with the Gr
 
 ## Continuous integration
 
-The `.github/workflows/` directory contains the CI matrix that runs the full example suite. Until `groupdocs-search-net` 26.10.0 is on PyPI it runs on demand only (Actions > Run Examples > Run workflow); after that, on every push. The matrix is reproducible locally via the `Dockerfile` above.
+The `.github/workflows/` directory contains the CI matrix that runs the full example suite on every push. The matrix is reproducible locally via the `Dockerfile` above.
 
 ## More Resources
 
